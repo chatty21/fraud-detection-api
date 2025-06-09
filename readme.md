@@ -8,65 +8,64 @@ An AI-powered Flask API that predicts whether a financial transaction is fraudul
 
 ## 🚀 Features
 
-- 🔍 Predicts fraud from transaction metadata (location, merchant, amount, etc.)
+- 🔍 Predicts fraud from transaction metadata (merchant, amount, location, etc.)
 - 🧩 Flask API with `/predict` route
-- 🧪 Integrated Swagger UI for live testing → [`/apidocs`](https://fraud-detection-api-19p9.onrender.com/apidocs)
-- 🌐 Beautiful HTML frontend → [`/form`](https://fraud-detection-api-19p9.onrender.com/form)
+- 🧪 Swagger UI for API testing → [View Docs](https://fraud-detection-api-19p9.onrender.com/apidocs)
+- 🌐 Beautiful HTML form → [Launch Form](https://fraud-detection-api-19p9.onrender.com/form)
 - 🧠 Uses a trained `RandomForestClassifier`
 
 ---
 
 ## 🧠 Tech Stack
 
-- Python + Flask
-- Scikit-learn + Joblib
-- HTML + CSS (Frontend)
+- Python, Flask
+- Scikit-learn, Joblib
+- HTML + CSS (custom frontend)
 - Flasgger (Swagger API Docs)
 
 ---
 
 ## 📂 Project Structure
 
-bank-fraud/
+fraud-detection-api/
 ├── app.py # Flask backend API
 ├── fraud_detection_model.pkl # Trained ML model
 ├── ordinal_encoder.pkl # Preprocessing encoder
 ├── templates/
-│ └── index.html # Frontend UI
+│ └── index.html # Frontend form UI
 ├── requirements.txt
+├── Procfile
 └── README.md
 
-yaml
-Copy
-Edit
 
 ---
 
-## ⚙️ Setup Instructions (Local Dev)
+## ⚙️ Local Setup Instructions
 
 ### 1. Clone the Repo
+
 ```bash
 git clone https://github.com/chatty21/fraud-detection-api.git
 cd fraud-detection-api
-2. (Optional) Create Virtual Environment
-bash
-Copy
-Edit
-python -m venv fraud_env
-source fraud_env/bin/activate  # On Windows: fraud_env\Scripts\activate
-3. Install Dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-4. Run the App Locally
-bash
-Copy
-Edit
-python app.py
-🌍 Visit: http://127.0.0.1:5050
 
-🔬 Swagger Docs: http://127.0.0.1:5050/apidocs
+(Optional) Create a Virtual Environment
+
+python -m venv fraud_env
+source fraud_env/bin/activate  # Windows: fraud_env\Scripts\activate
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+---
+
+### Run the App
+```bash
+python app.py
+---
+
+App runs at: http://127.0.0.1:5050
+
+Swagger UI: http://127.0.0.1:5050/apidocs
 
 📮 Example Request (POST /predict)
 json
@@ -95,32 +94,32 @@ Edit
   "age": 32
 }
 🧠 Model Info
-Model: RandomForestClassifier
+Classifier: RandomForestClassifier
 
-Trained on a 1M+ row anonymized dataset
+Dataset: 1M+ real-like financial transactions
 
-Balanced class distribution using class_weight='balanced'
+Balanced using class_weight='balanced'
 
 🌐 Live Demo
 🔗 Main API: fraud-detection-api-19p9.onrender.com
 
-🧪 Swagger UI (/apidocs)
+🧪 Swagger UI
 
-🌐 Frontend UI (/form)
+🌐 Frontend Form
 
-🚀 Optional Deployment Options
-You can easily deploy this app to:
+🚀 Deployment Options
+This app can be deployed on:
 
-Render (this repo is Render-ready)
+Render
 
 Google Cloud Run
 
 Replit
 
-Vercel (via Flask + ASGI with Uvicorn)
+Vercel (with ASGI wrapper)
 
 📄 License
-MIT License – free to use, modify, and share.
+MIT License – feel free to use, modify, and share.
 
 yaml
 Copy
@@ -128,9 +127,14 @@ Edit
 
 ---
 
-Would you like me to:
-- Save this as `README.md` and push it to your repo?
-- Add a screenshot of your Swagger or form in the README?
-- Help you write a LinkedIn post to share this project?
+Let me know if you'd like:
+- A version with screenshots
+- A `README_badge.png` or project thumbnail
+- Help uploading it to GitHub and verifying markdown formatting there
 
-Let me know!
+Ready to drop this in `README.md` and push! ✅
+
+
+
+
+
