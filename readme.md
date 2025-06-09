@@ -121,18 +121,6 @@ Vercel (with ASGI wrapper)
 📄 License
 MIT License – feel free to use, modify, and share.
 
-yaml
-Copy
-Edit
-
----
-
-Let me know if you'd like:
-- A version with screenshots
-- A `README_badge.png` or project thumbnail
-- Help uploading it to GitHub and verifying markdown formatting there
-
-Ready to drop this in `README.md` and push! ✅
 
 
 
