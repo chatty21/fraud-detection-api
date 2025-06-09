@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pandas as pd
 import joblib
 from flasgger import Swagger
@@ -19,6 +19,10 @@ categorical_cols = ['merchant', 'category', 'gender', 'city', 'state', 'job']
 @app.route('/')
 def home():
     return "✅ Fraud Detection API with Swagger is live! Go to /apidocs to test it."
+
+@app.route('/form')
+def form_ui():
+    return render_template("index.html")  # Serves HTML from templates/index.html
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -109,13 +113,9 @@ def predict():
         input_data = request.get_json()
         df = pd.DataFrame([input_data])
         df = df[expected_cols]
-
-        # Encode categorical columns
         df[categorical_cols] = encoder.transform(df[categorical_cols])
-
         prediction = model.predict(df)[0]
         return jsonify({"prediction": int(prediction)})
-    
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
